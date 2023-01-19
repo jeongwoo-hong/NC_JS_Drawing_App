@@ -16,15 +16,20 @@ canvas.height = 800;
 //     ctx.fill()
 // }, 5000);
 
-ctx.rect(50, 50, 100, 100)
-ctx.fillStyle = "red"
-setTimeout(() => {
-    ctx.fill()
-}, 1000);
-ctx.beginPath()
+// ctx.rect(50, 50, 100, 100)
+// ctx.fillStyle = "red"
+// setTimeout(() => {
+//     ctx.fill()
+// }, 1000);
+// ctx.beginPath()
 
-ctx.rect(150, 150, 100, 100)
-ctx.fillStyle = "orange"
-setTimeout(() => {
-    ctx.fill()
-}, 2000);
+// ctx.rect(150, 150, 100, 100)
+// ctx.fillStyle = "orange"
+// setTimeout(() => {
+//     ctx.fill()
+// }, 2000);
+
+ctx.rect(50, 50, 100, 1000)
+ctx.moveTo(50, 50)
+ctx.lineTo()
+ctx.fill()
