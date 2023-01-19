@@ -29,7 +29,9 @@ canvas.height = 800;
 //     ctx.fill()
 // }, 2000);
 
-ctx.rect(50, 50, 100, 1000)
+// ctx.rect(50, 50, 100, 100)
 ctx.moveTo(50, 50)
-ctx.lineTo()
-ctx.fill()
+ctx.lineTo(150, 50)
+ctx.lineTo(150, 150)
+ctx.lineTo(50, 150)
+ctx.stroke()
