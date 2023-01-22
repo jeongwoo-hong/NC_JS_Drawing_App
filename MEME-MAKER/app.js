@@ -38,11 +38,19 @@ canvas.height = 800;
 // ctx.lineTo(50, 150)
 // ctx.stroke()
 
-ctx.fillRect(200, 200, 50, 200)
-ctx.fillRect(400, 200, 50, 200)
-ctx.fillRect(300, 300, 50, 100)
-ctx.fillRect(200, 200, 200, 20)
-ctx.moveTo(200, 200)
-ctx.lineTo(325, 100)
-ctx.lineTo(450, 200)
+// draw house
+// ctx.fillRect(200, 200, 50, 200)
+// ctx.fillRect(400, 200, 50, 200)
+// ctx.fillRect(300, 300, 50, 100)
+// ctx.fillRect(200, 200, 200, 20)
+// ctx.moveTo(200, 200)
+// ctx.lineTo(325, 100)
+// ctx.lineTo(450, 200)
+// ctx.fill()
+
+// draw body
+ctx.fillRect(210, 200, 15, 100)
+ctx.fillRect(350, 200, 15, 100)
+ctx.fillRect(260, 200, 60, 200)
+ctx.arc(250, 100, 50, 0, 2 * Math.PI)
 ctx.fill()
