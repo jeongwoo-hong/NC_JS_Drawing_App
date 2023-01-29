@@ -60,8 +60,12 @@ canvas.height = 800;
 // ctx.arc(220 + 10, 80, 8, Math.PI, 2 * Math.PI)
 // ctx.fill()
 
+ctx.lineWidth = 2
+ctx.moveTo(0, 0)
+
 function onClick(e) {
-    console.log(e)
+    ctx.lineTo(e.offsetX, e.offsetY)
+    ctx.stroke()
 }
 
 canvas.addEventListener("click", onclick)
