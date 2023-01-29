@@ -61,11 +61,19 @@ canvas.height = 800;
 // ctx.fill()
 
 ctx.lineWidth = 2
-ctx.moveTo(0, 0)
 
-function onClick(e) {
-    ctx.lineTo(e.offsetX, e.offsetY)
+const colors = [
+    "#ff3838",
+    "#ffb8b8",
+    "#c56cf0"
+]
+
+function onClick(event) {
+    ctx.moveTo(0, 0)
+    const color = colors[Math.floor(Math.random() * colors.length)]
+    ctx.strokeStyle = color
+    ctx.lineTo(event.offsetX, event.offsetY)
     ctx.stroke()
 }
 
-canvas.addEventListener("click", onclick)
+canvas.addEventListener("click", onClick)
