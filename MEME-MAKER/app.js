@@ -63,6 +63,7 @@ canvas.height = 800;
 const lineWidth = document.getElementById("line-width")
 ctx.lineWidth = lineWidth.value
 const color = document.getElementById("color")
+const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 
 // const colors = [
 //     "#ff3838",
@@ -114,6 +115,10 @@ function onColorChange(e){
     ctx.fillStyle = e.target.value
 }
 
+function onColorClick(e){
+    
+}
+
 canvas.addEventListener("mousemove", onMove)
 canvas.addEventListener("mousedown", startPainting)
 canvas.addEventListener("mouseup", cancelPainting)
@@ -121,3 +126,4 @@ canvas.addEventListener("mouseleave", cancelPainting)
 
 lineWidth.addEventListener("change", onLineWidthChanges)
 color.addEventListener("change", onColorChange)
+colorOptions.forEach(color => color.addEventListener("click", onColorClick))
