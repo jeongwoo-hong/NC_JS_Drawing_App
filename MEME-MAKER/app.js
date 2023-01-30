@@ -60,7 +60,8 @@ canvas.height = 800;
 // ctx.arc(220 + 10, 80, 8, Math.PI, 2 * Math.PI)
 // ctx.fill()
 
-ctx.lineWidth = 2
+const lineWidth = document.getElementById("line-width")
+ctx.lineWidth = lineWidth.value
 
 // const colors = [
 //     "#ff3838",
