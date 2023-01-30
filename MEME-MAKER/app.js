@@ -66,6 +66,7 @@ const color = document.getElementById("color")
 const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 const modeBtn = document.getElementById("mode-btn")
 
+
 // const colors = [
 //     "#ff3838",
 //     "#ffb8b8",
@@ -86,7 +87,7 @@ const modeBtn = document.getElementById("mode-btn")
 
 
 
-
+let isFilling = false
 let isPainting = false
 
 function onMove(event) {
@@ -124,7 +125,13 @@ function onColorClick(e){
 }
 
 function onModeClick() {
-    
+    if(isFilling){
+        isFilling = false
+        modeBtn.innerText = "Fill"
+    } else {
+        isFilling = true
+        modeBtn.innerText = "Draw"
+    }
 }
 
 canvas.addEventListener("mousemove", onMove)
