@@ -89,6 +89,7 @@ function onMove(event) {
         ctx.stroke()
         return
     }
+    ctx.beginPath()
     ctx.moveTo(event.offsetX, event.offsetY)
 }
 
@@ -100,7 +101,13 @@ function cancelPainting() {
     isPainting = false
 }
 
+function onLineWidthChanges(e) {
+    ctx.lineWidth = e.target.value
+}
+
 canvas.addEventListener("mousemove", onMove)
 canvas.addEventListener("mousedown", startPainting)
 canvas.addEventListener("mouseup", cancelPainting)
 canvas.addEventListener("mouseleave", cancelPainting)
+
+lineWidth.addEventListener("change", onLineWidthChanges)
