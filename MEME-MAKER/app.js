@@ -65,6 +65,7 @@ ctx.lineWidth = lineWidth.value
 const color = document.getElementById("color")
 const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 const modeBtn = document.getElementById("mode-btn")
+const destroyBtn = document.getElementById("destroy-btn")
 
 
 // const colors = [
@@ -140,6 +141,12 @@ function onCanvasClick() {
     }
 }
 
+function onDestroyClick() {
+    ctx.fillStyle = "white"
+    ctx.fillRect(0, 0, 800, 800)
+
+}
+
 canvas.addEventListener("mousemove", onMove)
 canvas.addEventListener("mousedown", startPainting)
 canvas.addEventListener("mouseup", cancelPainting)
@@ -151,3 +158,4 @@ color.addEventListener("change", onColorChange)
 colorOptions.forEach(color => color.addEventListener("click", onColorClick))
 
 modeBtn.addEventListener("click", onModeClick)
+destroyBtn.addEventListener("click", onDestroyClick)
