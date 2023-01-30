@@ -80,7 +80,25 @@ ctx.lineWidth = 2
 
 // canvas.addEventListener("click", onClick)
 
-ctx.moveTo(200, 200)
+let isPainting = false
 
+function onMove(event) {
+    if (isPainting){
+        ctx.lineTo(event.offsetX, event.offsetY)
+        ctx.stroke()
+        return
+    }
+    ctx.moveTo(event.offsetX, event.offsetY)
+}
 
-ctx.lineTo(400, 400)
+function onMouseDown(){
+    isPainting = true
+}
+
+function onMouseUp() {
+    isPainting = false
+}
+
+canvas.addEventListener("mousemove", onMove)
+canvas.addEventListener("mousedown", onMouseDown)
+canvas.addEventListener("mouseup", onMouseUp)
