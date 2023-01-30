@@ -134,10 +134,17 @@ function onModeClick() {
     }
 }
 
+function onCanvasClick() {
+    if(isFilling){
+        ctx.fillRect(0, 0, 800, 800)
+    }
+}
+
 canvas.addEventListener("mousemove", onMove)
 canvas.addEventListener("mousedown", startPainting)
 canvas.addEventListener("mouseup", cancelPainting)
 canvas.addEventListener("mouseleave", cancelPainting)
+canvas.addEventListener("click", onCanvasClick)
 
 lineWidth.addEventListener("change", onLineWidthChanges)
 color.addEventListener("change", onColorChange)
