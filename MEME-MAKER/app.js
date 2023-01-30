@@ -110,7 +110,8 @@ function onLineWidthChanges(e) {
 }
 
 function onColorChange(e){
-    
+    ctx.strokeStyle = e.target.value
+    ctx.fillStyle = e.target.value
 }
 
 canvas.addEventListener("mousemove", onMove)
