@@ -62,6 +62,7 @@ canvas.height = 800;
 
 const lineWidth = document.getElementById("line-width")
 ctx.lineWidth = lineWidth.value
+const color = document.getElementById("color")
 
 // const colors = [
 //     "#ff3838",
@@ -80,6 +81,9 @@ ctx.lineWidth = lineWidth.value
 // }
 
 // canvas.addEventListener("click", onClick)
+
+
+
 
 let isPainting = false
 
@@ -105,9 +109,14 @@ function onLineWidthChanges(e) {
     ctx.lineWidth = e.target.value
 }
 
+function onColorChange(e){
+    
+}
+
 canvas.addEventListener("mousemove", onMove)
 canvas.addEventListener("mousedown", startPainting)
 canvas.addEventListener("mouseup", cancelPainting)
 canvas.addEventListener("mouseleave", cancelPainting)
 
 lineWidth.addEventListener("change", onLineWidthChanges)
+color.addEventListener("change", onColorChange)
