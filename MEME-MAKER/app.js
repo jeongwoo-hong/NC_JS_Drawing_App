@@ -116,7 +116,10 @@ function onColorChange(e){
 }
 
 function onColorClick(e){
-    
+    const colorValue = e.target.dataset.color
+    ctx.strokeStyle = colorValue
+    ctx.fillStyle = colorValue
+    color.value = colorValue
 }
 
 canvas.addEventListener("mousemove", onMove)
