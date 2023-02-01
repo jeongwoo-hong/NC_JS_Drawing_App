@@ -160,7 +160,8 @@ function onEraserClick() {
 }
 
 function onFileChange(e){
-    
+    const file = e.target.files[0]
+    const url = URL.createObjectURL(file)
 }
 
 canvas.addEventListener("mousemove", onMove)
