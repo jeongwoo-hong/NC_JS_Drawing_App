@@ -70,6 +70,7 @@ const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 const modeBtn = document.getElementById("mode-btn")
 const destroyBtn = document.getElementById("destroy-btn")
 const eraserBtn = document.getElementById("eraser-btn")
+const fileInput = document.getElementById("file")
 
 
 // const colors = [
@@ -155,6 +156,10 @@ function onEraserClick() {
     ctx.strokeStyle = "white"
     isFilling = false
     modeBtn = innerText = "Fill"
+
+}
+
+function onFileChange(e){
     
 }
 
@@ -171,3 +176,4 @@ colorOptions.forEach(color => color.addEventListener("click", onColorClick))
 modeBtn.addEventListener("click", onModeClick)
 destroyBtn.addEventListener("click", onDestroyClick)
 eraserBtn.addEventListener("click", onEraserClick)
+fileInput.addEventListener("change", onFileChange)
