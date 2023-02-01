@@ -166,6 +166,7 @@ function onFileChange(e){
     image.src = url
     image.onload = function() {
         ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+        fileInput.value = true
     }
 }
 
