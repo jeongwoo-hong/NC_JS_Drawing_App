@@ -172,7 +172,14 @@ function onFileChange(e){
 }
 
 function onDoubleClick(e){
-    
+    const text = textInput.value
+    if (text !== ""){
+        ctx.save()
+        ctx.lineWidth = 1
+        ctx.font = "48px, seris"
+        ctx.fillText(text, e.offsetX, e.offsetY)
+        ctx.restore()
+    }
 }
 
 canvas.addEventListener("mousemove", onMove)
