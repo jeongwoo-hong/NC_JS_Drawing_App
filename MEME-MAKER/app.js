@@ -165,7 +165,7 @@ function onFileChange(e){
     const image = new Image()
     image.src = url
     image.onload = function() {
-        ctx.drawImage(image, 200, 200)
+        ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
     }
 }
 
