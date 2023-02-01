@@ -71,6 +71,7 @@ const modeBtn = document.getElementById("mode-btn")
 const destroyBtn = document.getElementById("destroy-btn")
 const eraserBtn = document.getElementById("eraser-btn")
 const fileInput = document.getElementById("file")
+const textInput = document.getElementById("text")
 
 
 // const colors = [
@@ -166,8 +167,12 @@ function onFileChange(e){
     image.src = url
     image.onload = function() {
         ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
-        fileInput.value = true
+        fileInput.value = null
     }
+}
+
+function onDoubleClick(e){
+    
 }
 
 canvas.addEventListener("mousemove", onMove)
@@ -175,6 +180,7 @@ canvas.addEventListener("mousedown", startPainting)
 canvas.addEventListener("mouseup", cancelPainting)
 canvas.addEventListener("mouseleave", cancelPainting)
 canvas.addEventListener("click", onCanvasClick)
+canvas.addEventListener("dblclick", onDoubleClick)
 
 lineWidth.addEventListener("change", onLineWidthChanges)
 color.addEventListener("change", onColorChange)
