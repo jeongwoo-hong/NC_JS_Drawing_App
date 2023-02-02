@@ -105,7 +105,6 @@ function onMove(e) {
         ctx.stroke()
         return
     }
-    ctx.beginPath()
     ctx.moveTo(e.offsetX, e.offsetY)
 }
 
@@ -115,6 +114,7 @@ function startPainting(){
 
 function cancelPainting() {
     isPainting = false
+    ctx.beginPath()
 }
 
 function onLineWidthChanges(e) {
@@ -158,7 +158,7 @@ function onDestroyClick() {
 function onEraserClick() {
     ctx.strokeStyle = "white"
     isFilling = false
-    modeBtn = innerText = "Fill"
+    modeBtn.innerText = "Fill"
 
 }
 
