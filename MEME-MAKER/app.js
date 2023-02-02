@@ -74,6 +74,7 @@ const destroyBtn = document.getElementById("destroy-btn")
 const eraserBtn = document.getElementById("eraser-btn")
 const fileInput = document.getElementById("file")
 const textInput = document.getElementById("text")
+const saveBtn = document.getElementById("save")
 
 
 // const colors = [
@@ -167,7 +168,7 @@ function onFileChange(e){
     const url = URL.createObjectURL(file)
     const image = new Image()
     image.src = url
-    image.onload = function() {
+    image.onload = function () {
         ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
         fileInput.value = null
     }
@@ -178,10 +179,18 @@ function onDoubleClick(e){
     if (text !== ""){
         ctx.save()
         ctx.lineWidth = 1
-        ctx.font = "48px, seris"
+        ctx.font = "48px sans-serif"
         ctx.fillText(text, e.offsetX, e.offsetY)
         ctx.restore()
     }
+}
+
+function onSaveClick() {
+    const url = canvas.toDataURL()
+    const a = document.createElement("a")
+    a.href = url
+    a.download = "myDrawing.png"
+    a.click()
 }
 
 canvas.addEventListener("mousemove", onMove)
@@ -193,9 +202,10 @@ canvas.addEventListener("dblclick", onDoubleClick)
 
 lineWidth.addEventListener("change", onLineWidthChanges)
 color.addEventListener("change", onColorChange)
-colorOptions.forEach(color => color.addEventListener("click", onColorClick))
+colorOptions.forEach((color) => color.addEventListener("click", onColorClick))
 
 modeBtn.addEventListener("click", onModeClick)
 destroyBtn.addEventListener("click", onDestroyClick)
 eraserBtn.addEventListener("click", onEraserClick)
 fileInput.addEventListener("change", onFileChange)
+saveBtn.addEventListener("click", onSaveClick)
