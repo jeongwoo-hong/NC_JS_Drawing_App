@@ -63,8 +63,7 @@ const CANVAS_HEIGHT = 800;
 // ctx.arc(220 + 10, 80, 8, Math.PI, 2 * Math.PI)
 // ctx.fill()
 
-ctx.lineWidth = lineWidth.value
-ctx.lineCap = "round"
+
 
 const lineWidth = document.getElementById("line-width")
 const color = document.getElementById("color")
@@ -76,6 +75,8 @@ const fileInput = document.getElementById("file")
 const textInput = document.getElementById("text")
 const saveBtn = document.getElementById("save")
 
+ctx.lineWidth = lineWidth.value
+ctx.lineCap = "round"
 
 // const colors = [
 //     "#ff3838",
