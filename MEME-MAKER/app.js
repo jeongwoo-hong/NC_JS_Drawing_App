@@ -63,8 +63,10 @@ const CANVAS_HEIGHT = 800;
 // ctx.arc(220 + 10, 80, 8, Math.PI, 2 * Math.PI)
 // ctx.fill()
 
-const lineWidth = document.getElementById("line-width")
 ctx.lineWidth = lineWidth.value
+ctx.lineCap = "round"
+
+const lineWidth = document.getElementById("line-width")
 const color = document.getElementById("color")
 const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 const modeBtn = document.getElementById("mode-btn")
@@ -97,14 +99,14 @@ const textInput = document.getElementById("text")
 let isFilling = false
 let isPainting = false
 
-function onMove(event) {
+function onMove(e) {
     if (isPainting){
-        ctx.lineTo(event.offsetX, event.offsetY)
+        ctx.lineTo(e.offsetX, e.offsetY)
         ctx.stroke()
         return
     }
     ctx.beginPath()
-    ctx.moveTo(event.offsetX, event.offsetY)
+    ctx.moveTo(e.offsetX, e.offsetY)
 }
 
 function startPainting(){
