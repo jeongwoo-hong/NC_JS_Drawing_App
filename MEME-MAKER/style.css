@@ -19,6 +19,7 @@ canvas {
 .btns {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .color-option {
@@ -44,4 +45,20 @@ canvas {
 
 input#color {
     background-color: white;
+}
+
+button {
+    all:unset;
+    padding: 10px 0px;
+    text-align:  center;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity linear .1s;
+}
+
+button:hover{
+    opacity: 0.85;
 }
