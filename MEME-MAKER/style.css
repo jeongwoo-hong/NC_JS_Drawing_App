@@ -35,8 +35,13 @@ canvas {
     flex-direction: column;
     gap: 20px;
     transition: transform ease-in-out .3s;
+    align-items: center;
 }
 
 .color-option :hover{
     transform: scale(1.2);
+}
+
+input#color {
+    background-color: white;
 }
